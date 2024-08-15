@@ -7,8 +7,8 @@
     position: absolute;
     right: 0;
     top: 40px;
-    background-color: #f1f5f9;
-    color: rgb(172, 2, 172);
+    background-color: #5F10CC;
+    color: #fff;
     padding: 5px;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
@@ -16,8 +16,23 @@
 
 }
 
-/* .product-category {
-    position: absolute;
-    top: 50%;
-    left: 50%
-} */
+
+.pagination .selected {
+    background-color: #5F10CC;
+    color: #fff;
+    border-width: 0;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 0 5px;
+}
+
+.pagination .notSelected {
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 8px;
+    margin: 0 5px;
+}
+
+.pagination .notSelected:hover {
+    background-color: #BE79FB;
+}

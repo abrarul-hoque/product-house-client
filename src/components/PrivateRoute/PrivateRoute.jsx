@@ -11,7 +11,7 @@ const PrivateRoute = ({ children }) => {
     console.log("private route: loading", loading);
 
     if (loading) {
-        return <div className="flex justify-center"><img src={loader} alt="Loading....." /></div>
+        return <div className="flex justify-center"><img src={loader} className="w-2/5" alt="Loading....." /></div>
     }
 
     if (user) {
