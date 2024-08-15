@@ -340,5 +340,23 @@
         "category": "Outdoor",
         "rating": 4.7,
         "createdOn": "2024-07-09T14:20:00Z"
+    },
+    {
+        "name": "Smart Mirror",
+        "image": "https://i.ibb.co/19CDYTd/download-2.jpg",
+        "description": "A smart mirror that displays weather, time, and your daily schedule.",
+        "price": 299.99,
+        "category": "Home Automation",
+        "rating": 4.6,
+        "createdOn": "2024-07-08T10:00:00Z"
+    },
+    {
+        "name": "Bluetooth Tracking Device",
+        "image": "https://i.ibb.co/vBjqPh4/51-Smc11peq-L.jpg",
+        "description": "Keep track of your belongings with this compact Bluetooth tracking device.",
+        "price": 19.99,
+        "category": "Electronics",
+        "rating": 4.4,
+        "createdOn": "2024-07-07T11:30:00Z"
     }
 ]
