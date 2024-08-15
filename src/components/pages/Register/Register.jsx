@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaGoogle, FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+import useAxiosPublic from '../../Hooks/useAxiosPublic';
 
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
@@ -12,7 +13,7 @@ const Register = () => {
     // const { createUser, updateUser } = useAuth();
     // const { createUser, updateUser, user, setUser } = useContext(AuthContext)
 
-    // const axiosPublic = useAxiosPublic();
+    const axiosPublic = useAxiosPublic();
     const navigate = useNavigate();
 
     const {
