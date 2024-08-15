@@ -2,9 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import './Product.css';
 import { FaRegClock, FaStar } from 'react-icons/fa';
+import { useForm } from 'react-hook-form';
 
 const Products = () => {
     // const products = useLoaderData();
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm();
 
     const [products, setProducts] = useState([]);
     const [productsPerPage, setProductsPerPage] = useState(6);
@@ -25,14 +31,16 @@ const Products = () => {
             .then(res => res.json())
             .then(data => setCount(data.count))
     }, [])
-
+    // http://localhost:5000/products&search=
     useEffect(() => {
         const url = `http://localhost:5000/products?page=${currentPage}&size=${productsPerPage}`
-
         if (searchQuery) {
-            fetch(`${url}&search=${searchQuery}`)
+            fetch(`http://localhost:5000/products&search=${searchQuery}`)
                 .then(res => res.json())
-                .then(data => setProducts)
+                .then(data => {
+                    setProducts(data);
+                    console.log(data);
+                })
         }
         else {
             fetch(url)
@@ -66,11 +74,10 @@ const Products = () => {
     // console.log(Products)
 
     const handleSearch = e => {
-        setSearchQuery(e.target.value);
+        setSearchQuery(e.searchText);
         setCurrentPage(0);
+        console.log(e.searchText)
     }
-
-
 
 
     function convertToLocalTime(utcDateTime) {
@@ -79,10 +86,30 @@ const Products = () => {
         return localTime;
     }
 
-    console.log(products)
+    // console.log(products)
     return (
         <div >
-            Products:{products.length}
+            <div className=''>
+                <form onSubmit={handleSubmit(handleSearch)}>
+                    <div className="flex justify-center items-center mt-8">
+                        <label className="form-control w-full lg:w-1/3 ">
+
+                            <input
+                                type="text"
+                                {...register('searchText', { required: true })}
+                                placeholder="Enter your email"
+                                className="input input-bordered w-full" />
+                        </label>
+                        <input className='btn btn-primary' type="submit" value="Search" />
+
+                    </div>
+                    <div className="flex justify-center">
+                        {errors.searchText && <span className='text-red-400 mt-2'>Please write a Product Name</span>}
+                    </div>
+
+                </form>
+
+            </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
                 {
                     products.map((product) => <div className="card card-compact bg-base-100 shadow-xl">
@@ -103,9 +130,6 @@ const Products = () => {
                             <h2 className="card-title">{product.name}</h2>
                             <p className='text-base mb-2'>{product.description}</p>
                             <small className='text-end text-sm flex items-center gap-1 justify-end'> <FaRegClock />  {convertToLocalTime(product.createdOn)}</small>
-                            {/* <div className="card-actions justify-end">
-                                <button className="btn btn-primary">Buy Now</button>
-                            </div> */}
                         </div>
                     </div>)
                 }
@@ -118,7 +142,7 @@ const Products = () => {
                         <p className='mr-2'>Product Per Page: </p>
                         <div className='border-2 border-[#2848ff40] rounded'>
                             <select className='bg-[#2848ff20]' onChange={hangleProductsPerPage} value={productsPerPage} name="" id="">
-                                <option value="5">5</option>
+                                <option value="6">6</option>
                                 <option value="10">10</option>
                                 <option value="20">20</option>
                                 <option value="50">50</option>
