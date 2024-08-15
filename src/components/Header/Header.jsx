@@ -1,6 +1,6 @@
 import React from 'react';
 import mainLogo from "../../assets/product-house-main.png";
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Header = () => {
     const navLinks = <>
@@ -41,8 +41,9 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn btn-primary mr-2">Login</a>
-                    <a className="btn btn-success">Signin</a>
+                    <Link to="/login"><a className="btn btn-primary mr-2">Login</a></Link>
+                    <Link to="/register"><a className="btn btn-success">Register</a></Link>
+
                 </div>
             </div>
         </div>
