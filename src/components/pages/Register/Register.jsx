@@ -4,14 +4,14 @@ import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaGoogle, FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import useAxiosPublic from '../../Hooks/useAxiosPublic';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
-    // const { createUser, updateUser } = useAuth();
-    // const { createUser, updateUser, user, setUser } = useContext(AuthContext)
+    const { createUser, updateUser, user, setUser } = useContext(AuthContext)
 
     const axiosPublic = useAxiosPublic();
     const navigate = useNavigate();
@@ -27,42 +27,42 @@ const Register = () => {
     const handleRegister = async (data) => {
         console.log(data)
         const imageFile = { image: data.image[0] };
-        // const imageRes = await axiosPublic.post(image_hosting_api, imageFile, {
-        //     headers: {
-        //         'content-Type': "multipart/form-data"
-        //     }
-        // });
+        const imageRes = await axiosPublic.post(image_hosting_api, imageFile, {
+            headers: {
+                'content-Type': "multipart/form-data"
+            }
+        });
         console.log(imageRes);
 
         createUser(data.email, data.password)
-        // .then(result => {
-        //     const loggedUser = result.user;
-        //     updateUser(data.name, imageRes.data.data.display_url)
-        //         .then(() => {
-        //             const userInfo = {
-        //                 name: data.name,
-        //                 email: data.email,
-        //                 image: imageRes.data.data.display_url,
-        //                 role: 'user'
-        //             }
-        //             axiosPublic.post('/users', userInfo)
-        //                 .then(res => {
-        //                     if (res.data.insertedId) {
-        //                         console.log("user added to DB", res.data);
-        //                         reset();
-        //                         Swal.fire({
-        //                             title: "Success",
-        //                             text: "User Created successfuly!",
-        //                             icon: "success",
-        //                             timer: 1500
-        //                         });
-        //                         navigate("/")
-        //                         setUser({ ...user, displayName: userInfo.name, photoURL: userInfo.image });
-        //                         console.log("consoling after setUser: ", userInfo.image)
-        //                     }
-        //                 })
-        //         })
-        // })
+            .then(result => {
+                const loggedUser = result.user;
+                updateUser(data.name, imageRes.data.data.display_url)
+                    .then(() => {
+                        const userInfo = {
+                            name: data.name,
+                            email: data.email,
+                            image: imageRes.data.data.display_url,
+                            role: 'user'
+                        }
+                        axiosPublic.post('/users', userInfo)
+                            .then(res => {
+                                if (res.data.insertedId) {
+                                    console.log("user added to DB", res.data);
+                                    reset();
+                                    Swal.fire({
+                                        title: "Success",
+                                        text: "User Created successfuly!",
+                                        icon: "success",
+                                        timer: 1500
+                                    });
+                                    navigate("/")
+                                    setUser({ ...user, displayName: userInfo.name, photoURL: userInfo.image });
+                                    console.log("consoling after setUser: ", userInfo.image)
+                                }
+                            })
+                    })
+            })
     }
     return (
         <div>
@@ -112,17 +112,13 @@ const Register = () => {
                                     type={showPassword ? "text" : "password"}
                                     {...register("password", {
                                         required: true,
-                                        minLength: 8,
-                                        maxLength: 20,
-                                        pattern: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,20}$/
+                                        minLength: 6
                                     })}
                                     placeholder="Enter your password"
                                     className="input input-bordered w-full" />
                                 <span className="btn bg-transparent border-none absolute top-9 right-0" onClick={() => setShowPassword(!showPassword)}>{showPassword ? <FaRegEyeSlash className='text-2xl' /> : <FaRegEye className='text-2xl' />}</span>
                                 {errors.password?.type === "required" && <span className='text-red-400'>Password is required</span>}
-                                {errors.password?.type === "minLength" && <span className='text-red-400'>Password must be 8 characters</span>}
-                                {errors.password?.type === "maxLength" && <span className='text-red-400'>Password must be less then 20 characters</span>}
-                                {errors.password?.type === "pattern" && <span className='text-red-400'>Password must contain One number, One upper leter, One lower letter and One special character</span>}
+                                {errors.password?.type === "minLength" && <span className='text-red-400'>Password must be 6 characters or long!</span>}
                             </label>
 
                             <label className="form-control w-full lg:w-4/5 mb-2">
