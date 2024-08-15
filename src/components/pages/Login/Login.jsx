@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useForm } from 'react-hook-form';
 import { FaGoogle, FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import Swal from 'sweetalert2';
 import { Bounce, ToastContainer, toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Login = () => {
+    const { signIn } = useContext(AuthContext);
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const [showPassword, setShowPassword] = useState(false);
 
