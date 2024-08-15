@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import routes from './routes.jsx';
 import AuthProvider from './components/AuthProvider/AuthProvider.jsx';
+import 'react-toastify/dist/ReactToastify.css';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

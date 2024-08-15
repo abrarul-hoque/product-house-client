@@ -7,6 +7,7 @@ import Home from "./components/Home/Home";
 import NotFound from "./components/NotFound";
 import Login from "./components/pages/Login/Login";
 import Register from "./components/pages/Register/Register";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 const routes = createBrowserRouter([
     {
@@ -16,7 +17,8 @@ const routes = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <Home></Home>
+                element: <PrivateRoute><Home></Home></PrivateRoute>,
+                loader: () => fetch('http://localhost:5000/products')
             },
             {
                 path: "/login",

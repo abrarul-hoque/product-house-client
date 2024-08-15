@@ -1,9 +1,10 @@
 import React from 'react';
+import Products from './Products';
 
 const Home = () => {
     return (
-        <div>
-            This is home
+        <div className='max-w-6xl mx-auto'>
+            <Products></Products>
         </div>
     );
 };

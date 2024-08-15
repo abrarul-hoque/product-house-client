@@ -1,0 +1,23 @@
+.product-image {
+    position: relative;
+
+}
+
+.product-price {
+    position: absolute;
+    right: 0;
+    top: 40px;
+    background-color: #f1f5f9;
+    color: rgb(172, 2, 172);
+    padding: 5px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+
+
+}
+
+/* .product-category {
+    position: absolute;
+    top: 50%;
+    left: 50%
+} */
