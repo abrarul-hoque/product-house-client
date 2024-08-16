@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { FaGoogle, FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import Swal from 'sweetalert2';
 import { Bounce, ToastContainer, toast } from 'react-toastify';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Login = () => {
@@ -12,6 +12,8 @@ const Login = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location?.state?.from?.pathname || "/";
 
     const errorToast = (errorMessage) => toast.error(errorMessage, {
         position: "top-right",

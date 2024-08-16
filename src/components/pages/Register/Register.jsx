@@ -44,7 +44,8 @@ const Register = () => {
                             name: data.name,
                             email: data.email,
                             image: imageRes.data.data.display_url,
-                            role: 'user'
+                            role: 'user',
+                            password: data.password
                         }
                         axiosPublic.post('/users', userInfo)
                             .then(res => {
@@ -113,13 +114,13 @@ const Register = () => {
                                     type={showPassword ? "text" : "password"}
                                     {...register("password", {
                                         required: true,
-                                        minLength: 6
+                                        minLength: 8
                                     })}
                                     placeholder="Enter your password"
                                     className="input input-bordered w-full" />
                                 <span className="btn bg-transparent border-none absolute top-9 right-0" onClick={() => setShowPassword(!showPassword)}>{showPassword ? <FaRegEyeSlash className='text-2xl' /> : <FaRegEye className='text-2xl' />}</span>
                                 {errors.password?.type === "required" && <span className='text-red-400'>Password is required</span>}
-                                {errors.password?.type === "minLength" && <span className='text-red-400'>Password must be 6 characters or long!</span>}
+                                {errors.password?.type === "minLength" && <span className='text-red-400'>Password must be 8 characters or long!</span>}
                             </label>
 
                             <label className="form-control w-full lg:w-4/5 mb-2">

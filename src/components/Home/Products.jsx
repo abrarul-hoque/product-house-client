@@ -15,12 +15,16 @@ const Products = () => {
     const [count, setCount] = useState(0);
     const [searchQuery, setSearchQuery] = useState('');
     const [sortOrder, setSortOrder] = useState('');
+    // const [bnands, setBrands] = useState([]);
+    // const [categories, setCategories] = useState([]);
+    // const [priceRange, setPriceRange] = useState([0, 100]);
+
+    // const [selectedBrand, setSelectedBrand] = useState('');
+    // const [selectedCategory, setSelectedCategory] = useState('');
 
     const numberOfPages = Math.ceil(count / productsPerPage);
     const pages = [...Array(numberOfPages).keys()];
 
-    // console.log(pages);
-    // console.log(count);
 
     useEffect(() => {
         fetch('http://localhost:5000/productCount')
@@ -31,24 +35,14 @@ const Products = () => {
 
     useEffect(() => {
         let url = `http://localhost:5000/products?page=${currentPage}&size=${productsPerPage}`
-        if (searchQuery) {
-            fetch(`http://localhost:5000/products&search=${searchQuery}`)
-                .then(res => res.json())
-                .then(data => {
-                    setProducts(data);
-                    console.log(data);
-                })
-        }
         if (sortOrder) {
-            fetch(`http://localhost:5000/products?page=${currentPage}&size=${productsPerPage}&sortOrder=${sortOrder}`)
+            fetch(url + `&sortOrder=${sortOrder}`)
                 .then(res => res.json())
                 .then(data => {
                     setProducts(data);
                     console.log(data);
                 })
-            // console.log(url);
         }
-
         else {
             fetch(url)
                 .then(res => res.json())
@@ -59,10 +53,19 @@ const Products = () => {
 
 
 
-    const handleSearch = data => {
-        setSearchQuery(data.searchText);
-        setCurrentPage(0);
-        console.log(data.searchText)
+    const handleSearch = (e) => {
+        e.preventDefault();
+        // setSearchQuery(e.target.searchText.value);
+        const searchQry = e.target.searchText.value;
+        fetch(`http://localhost:5000/products&search=${searchQry}`)
+            .then(res => res.json())
+            .then(data => {
+                setProducts(data);
+                setCurrentPage(0);
+                console.log(data);
+            })
+
+        console.log(e.target.searchText.value)
     }
 
     const handleSortOrderChange = (e) => {
@@ -72,9 +75,11 @@ const Products = () => {
 
 
     const handleViewAll = () => {
-        fetch(url)
+        fetch(`http://localhost:5000/products?page=${currentPage}&size=${productsPerPage}`)
             .then(res => res.json())
-            .then(data => setProducts(data))
+            .then(data => {
+                setProducts(data);
+            })
     }
 
     function convertToLocalTime(utcDateTime) {
@@ -106,7 +111,7 @@ const Products = () => {
     return (
         <div >
             <div className=''>
-                <form onSubmit={handleSubmit(handleSearch)}>
+                {/* <form onSubmit={handleSubmit(handleSearch)}>
                     <div className="flex justify-center items-center mt-8 mx-10 gap-2">
                         <label className="form-control w-full lg:w-1/3 ">
                             <input
@@ -121,26 +126,56 @@ const Products = () => {
                     <div className="flex justify-center">
                         {errors.searchText && <span className='text-red-400 mt-2'>Please write a Product Name</span>}
                     </div>
+                </form> */}
+                <form onSubmit={handleSearch}>
+                    <div className="flex justify-center items-center mt-8 mx-10 gap-2">
+                        <label className="form-control w-full lg:w-1/3 ">
+                            <input
+                                type="text"
+                                name="searchText"
+                                // {...register('searchText', { required: true })}
+                                placeholder="Write a Product Name"
+                                className="input input-bordered w-full" />
+                        </label>
+                        <button className='btn btn-success'>Search</button>
+                    </div>
+                    {/* <div className="flex justify-center">
+                        {errors.searchText && <span className='text-red-400 mt-2'>Please write a Product Name</span>}
+                    </div> */}
                 </form>
             </div>
-            <div className='flex gap-2'>
-                <button className='btn btn-primary' onClick={handleViewAll}>View All</button>
+            <div className='flex gap-2 mx-4 my-4'>
+
                 <div>
                     <select className="select select-primary w-full max-w-xs" onChange={handleSortOrderChange}>
                         <option disabled selected>Sort By:</option>
                         <option value="priceAsc">Price Low to High</option>
                         <option value="priceDesc">Price High to Low</option>
-                        <option value="dateAsc">Added First</option>
-                        <option value="dateDesc">Added Last</option>
+                        <option value="dateDesc">Newest First</option>
+                        <option value="dateAsc">Newest Last</option>
                     </select>
+                </div>
+                <button className='btn' disabled>View All</button>
+
+                <div>
+                    <select className="select select-primary w-full max-w-xs">
+                        <option disabled selected>Sort By:</option>
+                        <option value="priceAsc">Price Low to High</option>
+                        <option value="priceDesc">Price High to Low</option>
+                        <option value="dateDesc">Newest First</option>
+                        <option value="dateAsc">Newest Last</option>
+                    </select>
+                </div>
+                <div>
+                    <button className='btn btn-primary' onClick={handleViewAll}>View All</button>
                 </div>
                 <div>
 
                 </div>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-5 '>
-                {products.length <= 0 ? <div className=''><span className='text-red-400 text-3xl text-center mt-2'>No Product Found</span></div> :
-                    products.map((product) => <div className="card card-compact bg-base-100 shadow-xl mx-4">
+                {products.length <= 0 ? <div className='' ><span className='text-red-400 text-3xl text-center mt-2'>No Product Found</span></div> :
+                    products.map((product) => <div className="card card-compact bg-base-100 shadow-xl mx-4" key={product._id}>
                         <figure className='product-image '>
                             <img
                                 src={product.image}

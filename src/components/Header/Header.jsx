@@ -3,6 +3,7 @@ import mainLogo from "../../assets/product-house-main.png";
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { Tooltip } from 'react-tooltip';
+import Swal from 'sweetalert2';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
