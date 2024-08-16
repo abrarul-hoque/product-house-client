@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FaGoogle, FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import useAxiosPublic from '../../Hooks/useAxiosPublic';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import Swal from 'sweetalert2';
 
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;

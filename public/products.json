@@ -1,362 +1,442 @@
 [
     {
+        "_id": "66bd16823b3fb596946b79dd",
         "name": "Wireless Bluetooth Headphones",
         "image": "https://i.ibb.co/kXQ54YK/download-1.jpg",
         "description": "High-quality wireless headphones with noise-cancellation and long battery life.",
         "price": 59.99,
         "category": "Electronics",
         "rating": 4.5,
-        "createdOn": "2024-08-15T10:30:00Z"
+        "createdOn": "2024-08-15T10:30:00Z",
+        "brandName": "Sony"
     },
     {
+        "_id": "66bd16823b3fb596946b79de",
         "name": "Smart LED TV",
         "image": "https://i.ibb.co/J5vNW7d/images-12.jpg",
         "description": "50-inch 4K Ultra HD Smart LED TV with built-in streaming apps.",
         "price": 399.99,
         "category": "Electronics",
         "rating": 4.8,
-        "createdOn": "2024-08-14T14:20:00Z"
+        "createdOn": "2024-08-14T14:20:00Z",
+        "brandName": "Samsung"
     },
     {
+        "_id": "66bd16823b3fb596946b79df",
         "name": "Ergonomic Office Chair",
         "image": "https://i.ibb.co/HXrQFbq/633bc22597235258d52d0584-office-chair-felixking-ergonomic-desk.jpg",
         "description": "Comfortable and adjustable office chair with lumbar support.",
         "price": 149.99,
         "category": "Furniture",
         "rating": 4.3,
-        "createdOn": "2024-08-13T09:45:00Z"
+        "createdOn": "2024-08-13T09:45:00Z",
+        "brandName": "MSI"
     },
     {
+        "_id": "66bd16823b3fb596946b79e0",
         "name": "Gaming Laptop",
         "image": "https://i.ibb.co/199q06W/MSI-Raider-GE78-HX-13-VI-Gaming-Laptop-3.webp",
         "description": "High-performance gaming laptop with the latest graphics card and fast processor.",
         "price": 1299.99,
         "category": "Computers",
         "rating": 4.7,
-        "createdOn": "2024-08-12T11:10:00Z"
+        "createdOn": "2024-08-12T11:10:00Z",
+        "brandName": "HP"
     },
     {
+        "_id": "66bd16823b3fb596946b79e1",
         "name": "Smartwatch",
         "image": "https://i.ibb.co/Ltx5kjT/Smartwatch.webp",
         "description": "Water-resistant smartwatch with heart rate monitor and fitness tracking features.",
         "price": 199.99,
         "category": "Wearables",
         "rating": 4.6,
-        "createdOn": "2024-08-11T16:55:00Z"
+        "createdOn": "2024-08-11T16:55:00Z",
+        "brandName": "Sony"
     },
     {
+        "_id": "66bd16823b3fb596946b79e2",
         "name": "4K Action Camera",
         "image": "https://i.ibb.co/XVyjYGb/71-O7-YNb-Gs-KS-AC-SL1500.jpg",
         "description": "Capture your adventures in stunning 4K resolution with this waterproof action camera.",
         "price": 249.99,
         "category": "Electronics",
         "rating": 4.4,
-        "createdOn": "2024-08-10T08:25:00Z"
+        "createdOn": "2024-08-10T08:25:00Z",
+        "brandName": "Sony"
     },
     {
+        "_id": "66bd16823b3fb596946b79e3",
         "name": "Portable Bluetooth Speaker",
         "image": "https://i.ibb.co/cwxqbx6/srs-xb13-black-24-8-23.jpg",
         "description": "Compact and portable Bluetooth speaker with deep bass and long battery life.",
         "price": 79.99,
         "category": "Electronics",
         "rating": 4.7,
-        "createdOn": "2024-08-09T13:35:00Z"
+        "createdOn": "2024-08-09T13:35:00Z",
+        "brandName": "Samsung"
     },
     {
+        "_id": "66bd16823b3fb596946b79e4",
         "name": "Running Shoes",
         "image": "https://i.ibb.co/nDn3pJN/images-13.jpg",
         "description": "Lightweight running shoes designed for comfort and performance.",
         "price": 89.99,
         "category": "Footwear",
         "rating": 4.3,
-        "createdOn": "2024-08-08T07:50:00Z"
+        "createdOn": "2024-08-08T07:50:00Z",
+        "brandName": "Nike"
     },
     {
+        "_id": "66bd16823b3fb596946b79e5",
         "name": "Fitness Tracker",
         "image": "https://i.ibb.co/RBvqQXp/61-Ywaovf-YFL.jpg",
         "description": "Track your steps, heart rate, and sleep with this sleek fitness tracker.",
         "price": 59.99,
         "category": "Wearables",
         "rating": 4.5,
-        "createdOn": "2024-08-07T15:40:00Z"
+        "createdOn": "2024-08-07T15:40:00Z",
+        "brandName": "Samsung"
     },
     {
+        "_id": "66bd16823b3fb596946b79e6",
         "name": "Electric Kettle",
         "image": "https://i.ibb.co/PzDgY6b/615mdb-Il-Dp-L-AC-SL1500.jpg",
         "description": "Boil water quickly and efficiently with this stylish electric kettle.",
         "price": 29.99,
         "category": "Kitchen Appliances",
         "rating": 4.2,
-        "createdOn": "2024-08-06T10:20:00Z"
+        "createdOn": "2024-08-06T10:20:00Z",
+        "brandName": "TopBit"
     },
     {
+        "_id": "66bd16823b3fb596946b79e7",
         "name": "Gaming Mouse",
         "image": "https://i.ibb.co/7tCD0s3/Gaming-Mouse.webp",
         "description": "High-precision gaming mouse with customizable buttons and RGB lighting.",
         "price": 49.99,
         "category": "Computers",
         "rating": 4.6,
-        "createdOn": "2024-08-05T11:15:00Z"
+        "createdOn": "2024-08-05T11:15:00Z",
+        "brandName": "Hp"
     },
     {
+        "_id": "66bd16823b3fb596946b79e8",
         "name": "Smartphone Gimbal",
         "image": "https://i.ibb.co/g6G6hnD/61-Xz-FY3s-ZRL-AC-SL1497.jpg",
         "description": "Capture smooth and stable video with this 3-axis smartphone gimbal.",
         "price": 139.99,
         "category": "Electronics",
         "rating": 4.4,
-        "createdOn": "2024-08-04T12:30:00Z"
+        "createdOn": "2024-08-04T12:30:00Z",
+        "brandName": "Dell"
     },
     {
+        "_id": "66bd16823b3fb596946b79e9",
         "name": "Wireless Charger",
         "image": "https://i.ibb.co/b7vxF6R/images-14.jpg",
         "description": "Fast wireless charger compatible with all Qi-enabled devices.",
         "price": 29.99,
         "category": "Electronics",
         "rating": 4.3,
-        "createdOn": "2024-08-03T14:10:00Z"
+        "createdOn": "2024-08-03T14:10:00Z",
+        "brandName": "Apple"
     },
     {
+        "_id": "66bd16823b3fb596946b79ea",
         "name": "Digital Camera",
         "image": "https://i.ibb.co/3dHKs54/images-15.jpg",
         "description": "Capture stunning photos with this easy-to-use digital camera.",
         "price": 499.99,
         "category": "Electronics",
         "rating": 4.7,
-        "createdOn": "2024-08-02T09:25:00Z"
+        "createdOn": "2024-08-02T09:25:00Z",
+        "brandName": "Nikkon"
     },
     {
+        "_id": "66bd16823b3fb596946b79eb",
         "name": "Air Fryer",
         "image": "https://i.ibb.co/20zhtJ7/Air-Fryer.webp",
         "description": "Cook healthier meals with this easy-to-use air fryer.",
         "price": 99.99,
         "category": "Kitchen Appliances",
         "rating": 4.5,
-        "createdOn": "2024-08-01T15:40:00Z"
+        "createdOn": "2024-08-01T15:40:00Z",
+        "brandName": "Apple"
     },
     {
+        "_id": "66bd16823b3fb596946b79ec",
         "name": "Electric Toothbrush",
         "image": "https://i.ibb.co/4dMjj0T/512-V1-GCv-z-L-SL1000-1.jpg",
         "description": "Achieve a deeper clean with this rechargeable electric toothbrush.",
         "price": 39.99,
         "category": "Personal Care",
         "rating": 4.6,
-        "createdOn": "2024-07-31T08:35:00Z"
+        "createdOn": "2024-07-31T08:35:00Z",
+        "brandName": "MSI"
     },
     {
+        "_id": "66bd16823b3fb596946b79ed",
         "name": "Espresso Machine",
         "image": "https://i.ibb.co/K2NFfN0/250x200.jpg",
         "description": "Brew barista-quality espresso at home with this easy-to-use machine.",
         "price": 199.99,
         "category": "Kitchen Appliances",
         "rating": 4.8,
-        "createdOn": "2024-07-30T12:15:00Z"
+        "createdOn": "2024-07-30T12:15:00Z",
+        "brandName": "TopBit"
     },
     {
+        "_id": "66bd16823b3fb596946b79ee",
         "name": "Smart Thermostat",
         "image": "https://i.ibb.co/2P978W9/smartthermostats-2048px-2898-3x2-1.webp",
         "description": "Control your home's temperature remotely with this smart thermostat.",
         "price": 149.99,
         "category": "Home Automation",
         "rating": 4.7,
-        "createdOn": "2024-07-29T14:50:00Z"
+        "createdOn": "2024-07-29T14:50:00Z",
+        "brandName": "Apple"
     },
     {
+        "_id": "66bd16823b3fb596946b79ef",
         "name": "Electric Scooter",
         "image": "https://i.ibb.co/NZ7ttQS/images-16.jpg",
         "description": "Zip around the city with this fast and eco-friendly electric scooter.",
         "price": 499.99,
         "category": "Outdoor",
         "rating": 4.6,
-        "createdOn": "2024-07-28T17:20:00Z"
+        "createdOn": "2024-07-28T17:20:00Z",
+        "brandName": "Nikkon"
     },
     {
+        "_id": "66bd16823b3fb596946b79f0",
         "name": "Portable Air Purifier",
         "image": "https://i.ibb.co/dD2M4cW/qt-air-purifier-front-angle.webp",
         "description": "Keep your air clean and fresh with this compact portable air purifier.",
         "price": 89.99,
         "category": "Home Appliances",
         "rating": 4.4,
-        "createdOn": "2024-07-27T09:10:00Z"
+        "createdOn": "2024-07-27T09:10:00Z",
+        "brandName": "Apple"
     },
     {
+        "_id": "66bd16823b3fb596946b79f1",
         "name": "Virtual Reality Headset",
         "image": "https://i.ibb.co/HrWNjcJ/images-17.jpg",
         "description": "Immerse yourself in virtual worlds with this high-quality VR headset.",
         "price": 299.99,
         "category": "Electronics",
         "rating": 4.8,
-        "createdOn": "2024-07-26T11:45:00Z"
+        "createdOn": "2024-07-26T11:45:00Z",
+        "brandName": "Hp"
     },
     {
+        "_id": "66bd16823b3fb596946b79f2",
         "name": "Home Security Camera",
         "image": "https://i.ibb.co/znJNprv/390x390.webp",
         "description": "Monitor your home from anywhere with this smart security camera.",
         "price": 119.99,
         "category": "Home Security",
         "rating": 4.7,
-        "createdOn": "2024-07-25T13:30:00Z"
+        "createdOn": "2024-07-25T13:30:00Z",
+        "brandName": "Dahua"
     },
     {
+        "_id": "66bd16823b3fb596946b79f3",
         "name": "Noise-Cancelling Earbuds",
         "image": "https://i.ibb.co/B6vj1sQ/51-WWFopin7-L-AC-UF894-1000-QL80.jpg",
         "description": "Enjoy your music without distractions with these noise-cancelling earbuds.",
         "price": 129.99,
         "category": "Electronics",
         "rating": 4.6,
-        "createdOn": "2024-07-24T15:00:00Z"
+        "createdOn": "2024-07-24T15:00:00Z",
+        "brandName": "Apple"
     },
     {
+        "_id": "66bd16823b3fb596946b79f4",
         "name": "Cordless Vacuum Cleaner",
         "image": "https://i.ibb.co/ysPv5Rp/images-18.jpg",
         "description": "Keep your home spotless with this powerful cordless vacuum cleaner.",
         "price": 249.99,
         "category": "Home Appliances",
         "rating": 4.5,
-        "createdOn": "2024-07-23T16:30:00Z"
+        "createdOn": "2024-07-23T16:30:00Z",
+        "brandName": "TopBit"
     },
     {
+        "_id": "66bd16823b3fb596946b79f5",
         "name": "Portable Power Bank",
         "image": "https://i.ibb.co/ctNdQPc/anker-533-powercore-30w-9800mah-portable-power-bank-5.webp",
         "description": "Charge your devices on the go with this high-capacity portable power bank.",
         "price": 39.99,
         "category": "Electronics",
         "rating": 4.4,
-        "createdOn": "2024-07-22T10:20:00Z"
+        "createdOn": "2024-07-22T10:20:00Z",
+        "brandName": "Dell"
     },
     {
+        "_id": "66bd16823b3fb596946b79f6",
         "name": "Electric Guitar",
         "image": "https://i.ibb.co/fSfsCqx/81el2-L-i-PSL.jpg",
         "description": "Rock out with this high-quality electric guitar, perfect for beginners and pros.",
         "price": 299.99,
         "category": "Musical Instruments",
         "rating": 4.7,
-        "createdOn": "2024-07-21T12:00:00Z"
+        "createdOn": "2024-07-21T12:00:00Z",
+        "brandName": "Xiomi"
     },
     {
+        "_id": "66bd16823b3fb596946b79f7",
         "name": "Portable Projector",
         "image": "https://i.ibb.co/JxG1B37/m1-1-500x500.jpg",
         "description": "Enjoy movies anywhere with this compact and portable projector.",
         "price": 199.99,
         "category": "Electronics",
         "rating": 4.6,
-        "createdOn": "2024-07-20T14:10:00Z"
+        "createdOn": "2024-07-20T14:10:00Z",
+        "brandName": "Samsung"
     },
     {
+        "_id": "66bd16823b3fb596946b79f8",
         "name": "Bluetooth Keyboard",
         "image": "https://i.ibb.co/r7Dz6Ks/bluetoothkeyboards-2048px-9845.webp",
         "description": "Type comfortably on the go with this slim and portable Bluetooth keyboard.",
         "price": 49.99,
         "category": "Computers",
         "rating": 4.5,
-        "createdOn": "2024-07-19T16:25:00Z"
+        "createdOn": "2024-07-19T16:25:00Z",
+        "brandName": "Hp"
     },
     {
+        "_id": "66bd16823b3fb596946b79f9",
         "name": "Instant Pot",
         "image": "https://i.ibb.co/gd3rJ9b/images-19.jpg",
         "description": "Cook meals quickly and easily with this versatile Instant Pot.",
         "price": 89.99,
         "category": "Kitchen Appliances",
         "rating": 4.8,
-        "createdOn": "2024-07-18T11:55:00Z"
+        "createdOn": "2024-07-18T11:55:00Z",
+        "brandName": "TopBit"
     },
     {
+        "_id": "66bd16823b3fb596946b79fa",
         "name": "Robot Vacuum Cleaner",
         "image": "https://i.ibb.co/ykMnWG0/M7Robot7.webp",
         "description": "Let this robot vacuum cleaner take care of your floors automatically.",
         "price": 299.99,
         "category": "Home Appliances",
         "rating": 4.7,
-        "createdOn": "2024-07-17T13:40:00Z"
+        "createdOn": "2024-07-17T13:40:00Z",
+        "brandName": "Google"
     },
     {
+        "_id": "66bd16823b3fb596946b79fb",
         "name": "Wireless Gaming Headset",
         "image": "https://i.ibb.co/fpgWQ0y/g435-black-01-500x500.jpg",
         "description": "Game in comfort with this wireless headset featuring surround sound.",
         "price": 99.99,
         "category": "Electronics",
         "rating": 4.5,
-        "createdOn": "2024-07-16T15:20:00Z"
+        "createdOn": "2024-07-16T15:20:00Z",
+        "brandName": "Hp"
     },
     {
+        "_id": "66bd16823b3fb596946b79fc",
         "name": "Smart Light Bulb",
         "image": "https://i.ibb.co/fYK90hh/images-20.jpg",
         "description": "Control your lighting with your voice or smartphone with this smart bulb.",
         "price": 19.99,
         "category": "Home Automation",
         "rating": 4.4,
-        "createdOn": "2024-07-15T10:30:00Z"
+        "createdOn": "2024-07-15T10:30:00Z",
+        "brandName": "Halima"
     },
     {
+        "_id": "66bd16823b3fb596946b79fd",
         "name": "Digital Picture Frame",
         "image": "https://i.ibb.co/QFLJqv8/71abs-Kz-SRk-L.jpg",
         "description": "Display your favorite memories with this easy-to-use digital picture frame.",
         "price": 79.99,
         "category": "Electronics",
         "rating": 4.6,
-        "createdOn": "2024-07-14T14:50:00Z"
+        "createdOn": "2024-07-14T14:50:00Z",
+        "brandName": "Nikkon"
     },
     {
+        "_id": "66bd16823b3fb596946b79fe",
         "name": "Smart Doorbell",
         "image": "https://i.ibb.co/tXQ2QX3/115619094-vic.jpg",
         "description": "See who’s at your door from anywhere with this smart video doorbell.",
         "price": 129.99,
         "category": "Home Security",
         "rating": 4.7,
-        "createdOn": "2024-07-13T11:20:00Z"
+        "createdOn": "2024-07-13T11:20:00Z",
+        "brandName": "Google"
     },
     {
+        "_id": "66bd16823b3fb596946b79ff",
         "name": "Smart Coffee Maker",
         "image": "https://i.ibb.co/hDpQ8Rh/images-21.jpg",
         "description": "Brew your coffee from your phone with this Wi-Fi enabled coffee maker.",
         "price": 149.99,
         "category": "Kitchen Appliances",
         "rating": 4.5,
-        "createdOn": "2024-07-12T09:50:00Z"
+        "createdOn": "2024-07-12T09:50:00Z",
+        "brandName": "Samsung"
     },
     {
+        "_id": "66bd16823b3fb596946b7a00",
         "name": "Wireless Security System",
         "image": "https://i.ibb.co/7VRSk65/61-GMdn-Gb-XL.jpg",
         "description": "Protect your home with this wireless security system featuring cameras and motion sensors.",
         "price": 349.99,
         "category": "Home Security",
         "rating": 4.8,
-        "createdOn": "2024-07-11T13:30:00Z"
+        "createdOn": "2024-07-11T13:30:00Z",
+        "brandName": "Dahua"
     },
     {
+        "_id": "66bd16823b3fb596946b7a01",
         "name": "Portable Blender",
         "image": "https://i.ibb.co/Gs00Dcy/716i-F4-GMf-L-AC-SL1500.jpg",
         "description": "Blend your favorite smoothies on the go with this compact portable blender.",
         "price": 29.99,
         "category": "Kitchen Appliances",
         "rating": 4.3,
-        "createdOn": "2024-07-10T12:10:00Z"
+        "createdOn": "2024-07-10T12:10:00Z",
+        "brandName": "MixerBit"
     },
     {
+        "_id": "66bd16823b3fb596946b7a02",
         "name": "Electric Bike",
         "image": "https://i.ibb.co/BBQ148R/Screenshot2023-09-08155743.webp",
         "description": "Commute effortlessly with this high-performance electric bike.",
         "price": 1199.99,
         "category": "Outdoor",
         "rating": 4.7,
-        "createdOn": "2024-07-09T14:20:00Z"
+        "createdOn": "2024-07-09T14:20:00Z",
+        "brandName": "Google"
     },
     {
+        "_id": "66bd17823b3fb596946c6e60",
         "name": "Smart Mirror",
         "image": "https://i.ibb.co/19CDYTd/download-2.jpg",
         "description": "A smart mirror that displays weather, time, and your daily schedule.",
         "price": 299.99,
         "category": "Home Automation",
         "rating": 4.6,
-        "createdOn": "2024-07-08T10:00:00Z"
+        "createdOn": "2024-07-08T10:00:00Z",
+        "brandName": "Hp"
     },
     {
+        "_id": "66bd17823b3fb596946c6e61",
         "name": "Bluetooth Tracking Device",
         "image": "https://i.ibb.co/vBjqPh4/51-Smc11peq-L.jpg",
         "description": "Keep track of your belongings with this compact Bluetooth tracking device.",
         "price": 19.99,
         "category": "Electronics",
         "rating": 4.4,
-        "createdOn": "2024-07-07T11:30:00Z"
+        "createdOn": "2024-07-07T11:30:00Z",
+        "brandName": "Sony"
     }
 ]
