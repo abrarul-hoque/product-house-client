@@ -28,6 +28,8 @@ This is the frontend of the Product House project, a web application for showcas
 
 ### Installation
 
+
+## Running the Project Locally
 1. Clone the repository:
 ```
 git clone https://github.com/abrarul-hoque/product-house-client
@@ -43,17 +45,26 @@ cd product-house-client
 ```
 npm install
 ```
-## Running the Project Locally
-1. Start the development server:
+4. Environment Variables
+Create a .env file in the root directory and add the following:
+
+```
+VITE_APIKEY=firebase_apiKey
+VITE_AUTHDOMAIN=firebase_authDomain
+VITE_PROJECTID=firebase_projectId
+VITE_STORAGEBUCKET=firebase_storageBucket
+VITE_MESSAGINGSENDERID=firebase_messagingSenderId
+VITE_APPID=firebase_appId
+VITE_IMAGE_HOSTING_KEY=imgbb_api_key
+
+```
+5. Start the development server:
 
 ```
 npm run dev
 ```
 
-2. Open your browser and go to http://localhost:5173 to view the application.
+6. Open your browser and go to http://localhost:5173 to view the application.
 
 
-## Environment Variables
-Create a .env file in the root directory and add the following:
-- Add firebase dependencies
-- Add imageHostingApi
+
