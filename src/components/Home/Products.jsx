@@ -27,26 +27,26 @@ const Products = () => {
 
     //Getting  Categories
     useEffect(() => {
-        fetch('http://localhost:5000/products/categories')
+        fetch('https://product-house-server-eight.vercel.app/products/categories')
             .then(res => res.json())
             .then(data => setCategories(data));
     }, [])
     //Getting brandName 
     useEffect(() => {
-        fetch('http://localhost:5000/products/brands')
+        fetch('https://product-house-server-eight.vercel.app/products/brands')
             .then(res => res.json())
             .then(data => setBrands(data));
     }, [])
 
     useEffect(() => {
-        fetch('http://localhost:5000/productCount')
+        fetch('https://product-house-server-eight.vercel.app/productCount')
             .then(res => res.json())
             .then(data => setCount(data.count))
     }, [])
 
 
     // useEffect(() => {
-    //     let url = `http://localhost:5000/products?page=${currentPage}&size=${productsPerPage}`
+    //     let url = `https://product-house-server-eight.vercel.app/products?page=${currentPage}&size=${productsPerPage}`
     //     if (sortOrder) {
     //         fetch(url + `&sortOrder=${sortOrder}`)
     //             .then(res => res.json())
@@ -64,7 +64,7 @@ const Products = () => {
 
 
     // useEffect(() => {
-    //     let url = `http://localhost:5000/products?page=${currentPage}&size=${productsPerPage}`
+    //     let url = `https://product-house-server-eight.vercel.app/products?page=${currentPage}&size=${productsPerPage}`
     //     if (selectedBrand) {
     //         url = url + `&brand=${selectedBrand}`;
     //     }
@@ -95,7 +95,7 @@ const Products = () => {
 
 
     useEffect(() => {
-        let url = `http://localhost:5000/products?page=${currentPage}&size=${productsPerPage}`
+        let url = `https://product-house-server-eight.vercel.app/products?page=${currentPage}&size=${productsPerPage}`
         const params = new URLSearchParams();
 
         if (selectedBrand) params.append('brand', selectedBrand);
@@ -131,7 +131,7 @@ const Products = () => {
         setSelectedBrand('');
         setSelectedCategory('');
         // setPriceRange([0, 100]);
-        fetch(`http://localhost:5000/products/search/${searchQry}`)
+        fetch(`https://product-house-server-eight.vercel.app/products/search/${searchQry}`)
             .then(res => res.json())
             .then(data => {
                 setProducts(data);
@@ -149,7 +149,7 @@ const Products = () => {
 
 
     const handleViewAll = () => {
-        fetch(`http://localhost:5000/products?page=${currentPage}&size=${productsPerPage}`)
+        fetch(`https://product-house-server-eight.vercel.app/products?page=${currentPage}&size=${productsPerPage}`)
             .then(res => res.json())
             .then(data => {
                 setProducts(data);

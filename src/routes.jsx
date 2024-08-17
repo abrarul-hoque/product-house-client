@@ -20,7 +20,7 @@ const routes = createBrowserRouter([
             {
                 path: "/",
                 element: <PrivateRoute><Home></Home></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/products')
+                loader: () => fetch('https://product-house-server-eight.vercel.app/products')
             },
             {
                 path: "/login",

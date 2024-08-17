@@ -6,6 +6,7 @@ import { FaGoogle, FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import useAxiosPublic from '../../Hooks/useAxiosPublic';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
@@ -137,6 +138,10 @@ const Register = () => {
                             <h3 className='text-base text-center mt-3'>Already have an Account? <Link to="/login" className='underline font-bold'>Login</Link></h3>
                             <input className='btn btn-primary my-5 w-4/5' type="submit" value="Register" />
                         </form>
+                        <div className="divider w-full lg:w-4/5">Or</div>
+                        <div className='flex justify-center w-full lg:w-4/5'>
+                            <SocialLogin></SocialLogin>
+                        </div>
                     </div>
 
                 </div>

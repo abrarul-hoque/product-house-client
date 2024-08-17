@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 import { Bounce, ToastContainer, toast } from 'react-toastify';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
     const { signIn, setUser } = useContext(AuthContext);
@@ -105,8 +106,8 @@ const Login = () => {
                         <input className='btn btn-primary my-5 w-full ' type="submit" value="Login" />
                     </form>
                     <div className="divider">Or</div>
-                    <div>
-                        <button>Login with Google</button>
+                    <div className='flex justify-center'>
+                        <SocialLogin></SocialLogin>
                     </div>
                 </div>
 
