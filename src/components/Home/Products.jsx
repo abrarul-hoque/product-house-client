@@ -104,8 +104,6 @@ const Products = () => {
 
         if (sortOrder) params.append('sortOrder', sortOrder);
 
-        // if (priceRange.length) params.append('priceRange', priceRange.join('-'));
-
         if (priceRange[0] !== 0 || priceRange[1] !== 100) {
             params.append('priceRange', priceRange.join('-'));
         }
@@ -132,7 +130,7 @@ const Products = () => {
 
         setSelectedBrand('');
         setSelectedCategory('');
-        setPriceRange([0, 100]);
+        // setPriceRange([0, 100]);
         fetch(`http://localhost:5000/products/search/${searchQry}`)
             .then(res => res.json())
             .then(data => {
@@ -275,19 +273,17 @@ const Products = () => {
                 </div>
                 <div className='flex items-center'>
                     {/* Filter by PriceRange */}
-                    <label className='text-base'>PriceRange:</label>
+                    {/* <label className='text-base'>PriceRange:</label> */}
                     {/* <input type="range" min="5" max="100000" step="5" onChange={handlePriceRangeChange} /> */}
                     <select className="select select-primary w-full" onChange={handlePriceRangeChange}>
                         {/* <option >Select an option:</option> */}
                         <option disabled selected value=""> Prices</option>
                         <option value="0-50">0 - 50</option>
                         <option value="0-150">0 - 150</option>
-                        <option value="0-200">0 - 200</option>
-                        <option value="0-2000">0 - 2000</option>
-                        <option value="0-100000">All</option>
+                        <option value="0-500">0 - 500</option>
+                        <option value="0-1000">0 - 1000</option>
+                        <option value="0-1000000">All</option>
                     </select>
-
-
 
                 </div>
             </div>
@@ -301,7 +297,7 @@ const Products = () => {
                             <img
                                 src={product.image}
                                 className=' h-[200px] p-4 mt-3'
-                                alt="Shoes" />
+                                alt="Product image" />
                         </figure>
                         <span className='product-price'>
                             <h3 className='flex gap-1 text-base items-center'><FaStar className='text-yellow-300' /> {product.rating}/5</h3>

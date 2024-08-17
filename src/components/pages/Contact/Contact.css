@@ -1,0 +1,31 @@
+.contact-form {
+    margin: 30px 0;
+    position: relative;
+}
+
+.form-control {
+    background-color: #011c4e;
+    color: #fff;
+}
+
+.form-control::placeholder {
+    color: #7484a1;
+}
+
+.form-control:focus {
+    background-color: #00153d;
+    color: #fff;
+}
+
+.message-input {
+    height: 100px !important;
+}
+
+.address {
+    text-align: left;
+}
+
+
+.error {
+    color: #ff4524;
+}
