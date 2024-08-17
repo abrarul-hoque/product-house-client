@@ -63,36 +63,63 @@ const Products = () => {
     // }, [currentPage, productsPerPage, searchQuery, sortOrder]);
 
 
+    // useEffect(() => {
+    //     let url = `http://localhost:5000/products?page=${currentPage}&size=${productsPerPage}`
+    //     if (selectedBrand) {
+    //         url = url + `&brand=${selectedBrand}`;
+    //     }
+    //     if (selectedCategory) {
+    //         url = url + `&category=${selectedCategory}`;
+    //     }
+
+    //     if (sortOrder) {
+    //         fetch(url + `&sortOrder=${sortOrder}`)
+    //             .then(res => res.json())
+    //             .then(data => {
+    //                 setProducts(data);
+    //                 console.log(data);
+    //             })
+    //     }
+    //     if (priceRange) {
+    //         url = url + `&minPrice=${priceRange[0]}&maxPrice=${priceRange[1]}`;
+    //         console.log(url)
+    //     }
+
+    //     else {
+    //         fetch(url)
+    //             .then(res => res.json())
+    //             .then(data => setProducts(data))
+    //     }
+
+    // }, [currentPage, productsPerPage, searchQuery, sortOrder, selectedBrand, selectedCategory, priceRange]);
+
+
     useEffect(() => {
         let url = `http://localhost:5000/products?page=${currentPage}&size=${productsPerPage}`
-        if (selectedBrand) {
-            url = url + `&brand=${selectedBrand}`;
-        }
-        if (selectedCategory) {
-            url = url + `&category=${selectedCategory}`;
-        }
+        const params = new URLSearchParams();
 
-        if (sortOrder) {
-            fetch(url + `&sortOrder=${sortOrder}`)
-                .then(res => res.json())
-                .then(data => {
-                    setProducts(data);
-                    console.log(data);
-                })
-        }
-        if (priceRange) {
-            url = url + `&minPrice=${priceRange[0]}&maxPrice=${priceRange[1]}`;
-            console.log(url)
-        }
+        if (selectedBrand) params.append('brand', selectedBrand);
 
-        else {
-            fetch(url)
-                .then(res => res.json())
-                .then(data => setProducts(data))
+        if (selectedCategory) params.append('category', selectedCategory);
+
+        if (sortOrder) params.append('sortOrder', sortOrder);
+
+        // if (priceRange.length) params.append('priceRange', priceRange.join('-'));
+
+        if (priceRange[0] !== 0 || priceRange[1] !== 100) {
+            params.append('priceRange', priceRange.join('-'));
         }
+        console.log(priceRange);
+
+
+        url += `&${params.toString()}`;
+        console.log(url);
+
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setProducts(data))
 
     }, [currentPage, productsPerPage, searchQuery, sortOrder, selectedBrand, selectedCategory, priceRange]);
-
 
 
 
@@ -102,14 +129,18 @@ const Products = () => {
         e.preventDefault();
         // setSearchQuery(e.target.searchText.value);
         const searchQry = e.target.searchText.value;
-        fetch(`http://localhost:5000/products&search=${searchQry}`)
+
+        setSelectedBrand('');
+        setSelectedCategory('');
+        setPriceRange([0, 100]);
+        fetch(`http://localhost:5000/products/search/${searchQry}`)
             .then(res => res.json())
             .then(data => {
                 setProducts(data);
                 setCurrentPage(0);
                 console.log(data);
             })
-
+            .catch(error => console.error('Error fetching data:', error));
         console.log(e.target.searchText.value)
     }
 
@@ -142,10 +173,11 @@ const Products = () => {
     }
 
     const handlePriceRangeChange = (e) => {
-        const range = e.target.value;
-        setPriceRange(range);
+        // const range = e.target.value;
+        const [min, max] = e.target.value.split("-").map(Number);
+        setPriceRange([min, max]);
         setCurrentPage(0)
-        console.log(range)
+        // console.log(range)
     }
 
 
@@ -230,14 +262,14 @@ const Products = () => {
                     <h3 className='text-base font-semibold w-1/3 ml-4 mr-2'>Filter:</h3>
                     {/* Filter by Brand Name */}
                     <select className="select select-primary w-full" onChange={handleBrandChange}>
-                        <option disabled selected>By Brand</option>
+                        <option disabled selected>Brands</option>
                         {brands.map((brand, idx) => <option key={idx} value={brand}>{brand}</option>)}
                     </select>
                 </div>
                 <div>
                     {/* Filter by Category */}
                     <select className="select select-primary w-full max-w-xs" onChange={handleCategoryChange}>
-                        <option disabled selected>By Category</option>
+                        <option disabled selected>Category</option>
                         {categories.map((category, idx) => <option key={idx} value={category}>{category}</option>)}
                     </select>
                 </div>
@@ -247,18 +279,15 @@ const Products = () => {
                     {/* <input type="range" min="5" max="100000" step="5" onChange={handlePriceRangeChange} /> */}
                     <select className="select select-primary w-full" onChange={handlePriceRangeChange}>
                         {/* <option >Select an option:</option> */}
-                        <option defaultValue="" >All Prices</option>
+                        <option disabled selected value=""> Prices</option>
                         <option value="0-50">0 - 50</option>
-                        <option value="50-100">50 - 100</option>
-                        <option value="100-200">100 - 200</option>
-                        <option value="200-2000">200 - 2000</option>
-                        <option value="2000-10000">200 - 10000</option>
+                        <option value="0-150">0 - 150</option>
+                        <option value="0-200">0 - 200</option>
+                        <option value="0-2000">0 - 2000</option>
+                        <option value="0-100000">All</option>
                     </select>
 
 
-                </div>
-
-                <div>
 
                 </div>
             </div>
@@ -284,7 +313,10 @@ const Products = () => {
                         <div className="card-body">
                             <h2 className="card-title">{product.name}</h2>
                             <p className='text-base mb-2'>{product.description}</p>
-                            <small className='text-end text-sm flex items-center gap-1 justify-end'> <FaRegClock />  {convertToLocalTime(product.createdOn)}</small>
+                            <div className='flex justify-between'>
+                                <p className=''>Brand: <span className='text-purple-700 font-semibold'>{product.brandName}</span></p>
+                                <small className='text-end text-sm flex items-center gap-1 justify-end'> <FaRegClock />  {convertToLocalTime(product.createdOn)}</small>
+                            </div>
                         </div>
                     </div>)
                 }

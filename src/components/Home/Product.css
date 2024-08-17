@@ -14,7 +14,11 @@
     border-bottom-left-radius: 8px;
 }
 
-
+.brand-name {
+    position: absolute;
+    left: 0;
+    top: 40px;
+}
 
 .pagination .selected {
     background-color: #5F10CC;
