@@ -334,14 +334,14 @@ const Products = () => {
                         </div>
                     </div>
                     <div className='flex justify-center'>
-                        <button onClick={handlePreviousPage}>Previous</button>
+                        <button className='btn-sm' onClick={handlePreviousPage}>Previous</button>
                         {
                             pages.map(page => <button
                                 onClick={() => setCurrentPage(page)}
-                                className={currentPage === page ? "selected" : "notSelected"}
+                                className={`${currentPage === page ? "selected" : "notSelected"} btn-sm`}
                                 key={page} >{page + 1} </button>)
                         }
-                        <button onClick={handleNextPage}>Next</button>
+                        <button className='btn-sm' onClick={handleNextPage}>Next</button>
                     </div>
                 </div>
             </div>

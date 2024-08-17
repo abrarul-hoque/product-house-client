@@ -24,14 +24,14 @@
     background-color: #5F10CC;
     color: #fff;
     border-width: 0;
-    padding: 10px;
+    /* padding: 10px; */
     border-radius: 8px;
     margin: 0 5px;
 }
 
 .pagination .notSelected,
 .pagination button {
-    padding: 10px;
+    /* padding: 5px 10px; */
     border: 1px solid gray;
     border-radius: 8px;
     margin: 0 5px;
